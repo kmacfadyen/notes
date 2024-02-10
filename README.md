@@ -73,3 +73,13 @@ const HelloWorldApp = () => {
 export default HelloWorldApp;
 
 --------------
+
+1. Install the React Native Elements package from the NPM
+npm install @rneui/base @rneui/themed
+
+
+2. Import the component and use it in your project
+import React from 'react';
+import { Button } from '@rneui/base';
+
+const AwesomeButton = () => (<Button title='Welcome'/>)
