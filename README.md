@@ -175,4 +175,6 @@ Version 4.5.5
 tsc: The TypeScript Compiler - Version 4.5.5
 Followed by a list of all the Common Commands.
 
--------------
+---------------
+
+(https://github.com/kmacfadyen/notes/assets/113712611/fdcb9912-73f1-4803-a5da-bb17dec4215b)
