@@ -195,3 +195,17 @@ let arr: any[] = ['hello', 1, true]; // any basically reverts TypeScript back in
 ids.push(6);
 ids.push('7'); // ERROR: Argument of type 'string' is not assignable to parameter of type 'number'.
 
+---------------
+
+Debugging
+
+VS Code has built-in support for TypeScript debugging. To support debugging TypeScript in combination with the executing JavaScript code, VS Code relies on source maps for the debugger to map between the original TypeScript source code and the running JavaScript. You can create source maps during the build by setting "sourceMap": true in your tsconfig.json.
+
+{
+  "compilerOptions": {
+    "target": "ES5",
+    "module": "CommonJS",
+    "outDir": "out",
+    "sourceMap": true
+  }
+}
