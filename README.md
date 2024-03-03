@@ -209,3 +209,27 @@ VS Code has built-in support for TypeScript debugging. To support debugging Type
     "sourceMap": true
   }
 }
+
+---------------
+
+Step 3: Make the TypeScript Build the default
+You can also define the TypeScript build task as the default build task so that it is executed directly when triggering Run Build Task (⇧⌘B). To do so, select Configure Default Build Task from the global Terminal menu. This shows you a picker with the available build tasks. Select TypeScript tsc: build, which generates the following tasks.json file in a .vscode folder:
+
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "type": "typescript",
+            "tsconfig": "tsconfig.json",
+            "problemMatcher": [
+                "$tsc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        }
+    ]
+}
