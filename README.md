@@ -235,3 +235,39 @@ You can also define the TypeScript build task as the default build task so that 
 }
 
 ---------------
+
+Class declarations must not be terminated with semicolons:
+
+class Foo {
+}
+class Foo {
+}; // Unnecessary semicolon
+In contrast, statements that contain class expressions must be terminated with a semicolon:
+
+export const Baz = class extends Bar {
+  method(): number {
+    return this.x;
+  }
+}; // Semicolon here as this is a statement, not a declaration
+exports const Baz = class extends Bar {
+  method(): number {
+    return this.x;
+  }
+}
+It is neither encouraged nor discouraged to have blank lines separating class declaration braces from other class content:
+
+// No spaces around braces - fine.
+class Baz {
+  method(): number {
+    return this.x;
+  }
+}
+
+// A single space around both braces - also fine.
+class Foo {
+
+  method(): number {
+    return this.x;
+  }
+
+}
