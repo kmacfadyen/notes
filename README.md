@@ -356,3 +356,4 @@ a-ngrx-data-entity-metadata	create the entity metadata for NgRx
 a-ngrx-data-entity-collection-data-service	create a data service using NgRx
 Dockerfile Snippets
 
+--------------------------
