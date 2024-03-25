@@ -354,6 +354,5 @@ a-ngrx-create-selector-props	create an NgRx selector with createSelector with pr
 a-ngrx-data-entity-data-module-import	add EntityDataModule
 a-ngrx-data-entity-metadata	create the entity metadata for NgRx
 a-ngrx-data-entity-collection-data-service	create a data service using NgRx
-Dockerfile Snippets
 
 --------------------------
