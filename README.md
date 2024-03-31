@@ -356,3 +356,122 @@ a-ngrx-data-entity-metadata	create the entity metadata for NgRx
 a-ngrx-data-entity-collection-data-service	create a data service using NgRx
 
 --------------------------
+
+Print to the console with a variable
+"Print to console with variable": {
+	"scope": "typescript",
+	"prefix": "csLog",
+	"body": ["console.log('$1: ', $2)$0"],
+	"description": "Log output to console"
+}
+If / else statement
+"If else": {
+	"scope": "typescript",
+	"prefix": "csIfElse",
+	"body": ["if ($1) {", "\t$2", "}", " else {", "\t$3", "}", "", "$0"],
+	"description": "If / else statement"
+}
+If statement
+"If": {
+	"scope": "typescript",
+	"prefix": "csIf",
+	"body": ["if ($1) {", "\t$0", "}"],
+	"description": "If statement"
+}
+Else statement
+"Else": {
+	"scope": "typescript",
+	"prefix": "csElse",
+	"body": [" else $1{", "\t$0", "}"],
+	"description": "Else statement"
+}
+Property with a backing field
+"Property with a backing field": {
+	"scope": "typescript",
+	"prefix": "csProp",
+	"body": [
+		"private $1Private: $0",
+		"",
+		"public get $1(): $0 {",
+		"\treturn this.$1Private",
+		"}",
+		"",
+		"public set $1(value: $0) {",
+		"\tthis.$1Private = value",
+		"}"
+	],
+	"description": "Property with a backing field"
+}
+Field variable
+"Field": {
+	"scope": "typescript",
+	"prefix": "csField",
+	"body": ["${1|private,public|} ${2:FieldName}${3|: boolean,: string|,: number|,: date|}"],
+	"description": "Field (class level)"
+}
+Class constructor
+"Constructor": {
+	"scope": "typescript",
+	"prefix": "csConstructor",
+	"body": ["constructor() {", "\tsuper()", "\t$0", "}"],
+	"description": "Constructor statement"
+}
+Export class
+"Export class": {
+	"scope": "typescript",
+	"prefix": "csClass",
+	"body": [
+		"/**",
+		" *",
+		" *",
+		" * @export",
+		" * @class $1",
+		" */",
+		"export class $1 {",
+		"\tconstructor() {",
+		"\t\t$0",
+		"\t}",
+		"",
+		"}"
+	],
+	"description": "Export class"
+}
+Import Node module
+"Import node module": {
+	"scope": "typescript",
+	"prefix": "csImport",
+	"body": ["import * as $2 from '$1'$0"],
+	"description": "Import node module"
+}
+For... loop
+"For loop": {
+	"scope": "typescript",
+	"prefix": "csFor",
+	"body": ["for (let ${1:i} = 0; ${1:i} < $2; ${1:i}++) {", "\t$0", "}"],
+	"description": "For loop"
+}
+Class method
+"Method": {
+	"scope": "typescript",
+	"prefix": "csMethod",
+	"body": [
+		"${1|private,public|} ${2| ,async|} ${3:MethodName}($4)${5| ,: Promise|} {",
+		"\t$0",
+		"}"
+	],
+	"description": "Method"
+}
+Try... catch block
+"Try / catch": {
+	"scope": "typescript",
+	"prefix": "csTryCatch",
+	"body": ["try {", "\t$1", "}", "catch (error) {", "\t$0", "}"],
+	"description": "Try / catch block"
+}
+Try... finally block
+"Try / finally": {
+	"scope": "typescript",
+	"prefix": "csTryFinally",
+	"body": ["try {", "\t$1", "}", "finally {", "\t$0", "}"],
+	"description": "Try / finally"
+}
