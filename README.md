@@ -475,3 +475,5 @@ Try... finally block
 	"body": ["try {", "\t$1", "}", "finally {", "\t$0", "}"],
 	"description": "Try / finally"
 }
+
+--------------------------
