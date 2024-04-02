@@ -477,3 +477,75 @@ Try... finally block
 }
 
 --------------------------
+
+TypeScript constant VS Code snippet
+${1:type} - type name
+${2:name} - constant name
+${3:prop} - constant property name
+${4:1} - constant property value
+\t$0 - ends on create new property
+{
+    "TypeScript constant": {
+        "scope": "javascript,typescript,vue",
+        "prefix": "ts-constant",
+        "description": "TypeScript constant",
+        "body": [
+            "export const ${2:name} = <const>{",
+            "    ${3:prop}: ${4:1},",
+            "\t$0",
+            "}",
+            "",
+            "export type ${1:type} = typeof ${2:name}[keyof typeof ${2:name}]"
+        ],
+    },
+}
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+JSON
+COPY
+TypeScript interface VS Code snippet
+${1:name} - interface name
+${2:key} - interface property name
+${3:string} - interface property value
+\t$0 - ends on create new property
+{
+    "TypeScript interface": {
+        "scope": "javascript,typescript,vue",
+        "prefix": "ts-interface",
+        "description": "TypeScript interface",
+        "body": [
+            "export interface ${1:name} {",
+            "    ${2:key}: ${3:string},",
+            "\t$0",
+            "}",
+        ],
+    }
+}
