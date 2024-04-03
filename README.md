@@ -549,3 +549,5 @@ ${3:string} - interface property value
         ],
     }
 }
+
+--------------------------
