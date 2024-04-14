@@ -177,10 +177,6 @@ Followed by a list of all the Common Commands.
 
 ---------------
 
-(https://github.com/kmacfadyen/notes/assets/113712611/fdcb9912-73f1-4803-a5da-bb17dec4215b)
-
----------------
-
 More TypeScript:
 
 let ids: number[] = [1, 2, 3, 4, 5]; // can only contain numbers
