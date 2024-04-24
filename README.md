@@ -682,6 +682,8 @@ return emails.map(function(email) {
 });
 Because this returns an array like [] instead of a single object like {} this will activate follow up actions multiple times, one for each email found! If no emails are found, nothing happens.
 
+--------------------------
+
 Weather JSON API Call
 This example expects a zipCode in the "Input Data" field:
 
