@@ -298,7 +298,7 @@ Tailwind CSS Examples:
   </form>
 </div>
 
---------------------------
+-------------------------
 
 TypeScript Angular Snippets
 Snippet	Purpose
