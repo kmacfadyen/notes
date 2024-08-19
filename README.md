@@ -707,3 +707,201 @@ callback(null, json);
 .catch(callback);
 
 ----------------------
+
+Go Snippets:
+
+1. Hello World:
+Copy
+package main
+
+import "fmt"
+
+func main() {
+    fmt.Println("Hello, World!")
+}
+
+2. Reading Input from Console:
+Copy
+package main
+
+import (
+    "fmt"
+    "bufio"
+    "os"
+)
+
+func main() {
+    scanner := bufio.NewScanner(os.Stdin)
+    fmt.Print("Enter text: ")
+    scanner.Scan()
+    input := scanner.Text()
+    fmt.Println("You entered:", input)
+}
+
+3. Creating a Goroutine:
+Copy
+package main
+
+import (
+    "fmt"
+    "time"
+)
+
+func printNumbers() {
+    for i := 1; i <= 5; i++ {
+        fmt.Println(i)
+        time.Sleep(time.Second)
+    }
+}
+
+func main() {
+    go printNumbers()
+    time.Sleep(3 * time.Second)
+}
+
+4. Working with Slices:
+Copy
+package main
+
+import "fmt"
+
+func main() {
+    numbers := []int{1, 2, 3, 4, 5}
+    fmt.Println("Slice:", numbers)
+    fmt.Println("Length:", len(numbers))
+    fmt.Println("First Element:", numbers[0])
+}
+
+5. Error Handling:
+Copy
+package main
+
+import (
+    "errors"
+    "fmt"
+)
+
+func divide(a, b float64) (float64, error) {
+    if b == 0 {
+        return 0, errors.New("division by zero")
+    }
+    return a / b, nil
+}
+
+func main() {
+    result, err := divide(10, 2)
+    if err != nil {
+        fmt.Println("Error:", err)
+        return
+    }
+    fmt.Println("Result:", result)
+}
+
+6. HTTP Server:
+Copy
+package main
+
+import (
+    "fmt"
+    "net/http"
+)
+
+func handler(w http.ResponseWriter, r *http.Request) {
+    fmt.Fprintln(w, "Hello, HTTP!")
+}
+
+func main() {
+    http.HandleFunc("/", handler)
+    http.ListenAndServe(":8080", nil)
+}
+
+7. JSON Marshalling and Unmarshalling:
+Copy
+package main
+
+import (
+    "fmt"
+    "encoding/json"
+)
+
+type Person struct {
+    Name  string `json:"name"`
+    Age   int    `json:"age"`
+}
+
+func main() {
+    jsonStr := `{"name":"Alice", "age":30}`
+    var person Person
+    err := json.Unmarshal([]byte(jsonStr), &person)
+    if err != nil {
+        fmt.Println("Error:", err)
+        return
+    }
+    fmt.Println("Name:", person.Name)
+    fmt.Println("Age:", person.Age)
+}
+
+8. Concurrency with Wait Groups:
+Copy
+package main
+
+import (
+    "fmt"
+    "sync"
+)
+
+func worker(id int, wg *sync.WaitGroup) {
+    defer wg.Done()
+    fmt.Printf("Worker %d started\n", id)
+}
+
+func main() {
+    var wg sync.WaitGroup
+    for i := 1; i <= 5; i++ {
+        wg.Add(1)
+        go worker(i, &wg)
+    }
+    wg.Wait()
+    fmt.Println("All workers have finished.")
+}
+
+9. Reading and Writing Files:
+Copy
+package main
+
+import (
+    "fmt"
+    "io/ioutil"
+)
+
+func main() {
+    data := []byte("Hello, File!")
+    err := ioutil.WriteFile("example.txt", data, 0644)
+    if err != nil {
+        fmt.Println("Error:", err)
+        return
+    }
+    content, err := ioutil.ReadFile("example.txt")
+    if err != nil {
+        fmt.Println("Error:", err)
+        return
+    }
+    fmt.Println("File Content:", string(content))
+}
+
+10. Sorting Slices:
+```go
+package main
+
+import (
+    "fmt"
+    "sort"
+)
+
+func main() {
+    numbers := []int{5, 2, 9, 1, 5}
+    sort.Ints(numbers)
+    fmt.Println("Sorted Slice:", numbers)
+}
+```
+These code snippets cover a range of common Go programming tasks and concepts, from basic I/O operations to concurrency, error handling, and more. Feel free to adapt and use them as needed in your Go projects.
